@@ -11,9 +11,9 @@ const App = () => {
     return(
       <div>
           {/*<Posts/>*/}
-          {/*/<Launches/>*/}
-          <Users setUserId={setUserId}/>
-          {userId && <UserPosts userId={userId} />}
+          <Launches/>
+          {/*<Users setUserId={setUserId}/>*/}
+          {/*{userId && <UserPosts userId={userId} />}*/}
       </div>
   );
 };
