@@ -10,7 +10,7 @@ const CarForm = ({setAllCars,carForUpdate}) => {
             setValue('price',carForUpdate.price,{shouldValidate:true})
             setValue('year',carForUpdate.year,{shouldValidate:true})
         }
-    },deps:[carForUpdate])
+    },[carForUpdate])
     const save= async (car)=>{
         const {data}=await carService.create(car);
         setAllCars(prev=>!prev)
@@ -22,7 +22,7 @@ const CarForm = ({setAllCars,carForUpdate}) => {
 
     }
     return (
-        <form onSubmit={handleSubmit(save)}>
+        <form onSubmit={handleSubmit(carForUpdate?update:save)}>
             <input type="text"placeholder={'brand'} {...register('brand',{
                 pattern: {value:/^[a-zA-Zа-яА-яёЁіІїЇ]{1,20}$/,
                 message:'Бренд має складатися тільки з літер мін 1 і макс 20 літер'}})} />
