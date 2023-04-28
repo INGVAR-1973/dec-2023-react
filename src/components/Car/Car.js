@@ -5,7 +5,7 @@ const Car = ({car,setCarForUpdate, setChange, change }) => {
     const {id,brand,price,year} = car;
 
     const deleteCar = async (id) => {
-        awainpmt carService.deleteById(id)
+        await carService.deleteById(id)
         console.log(id)
         setChange(!change)
     }
